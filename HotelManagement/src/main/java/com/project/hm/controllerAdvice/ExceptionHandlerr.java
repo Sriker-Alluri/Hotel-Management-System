@@ -3,8 +3,10 @@ package com.project.hm.controllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.project.hm.customexceptions.BadRequestException;
@@ -15,6 +17,7 @@ import com.project.hm.customexceptions.UserNotValidException;
 public class ExceptionHandlerr {
 	
 	@ExceptionHandler(UserNotValidException.class)
+	   @ResponseStatus(value=HttpStatus.NOT_FOUND)
 	public Map<String, String>handleException(UserNotValidException exception){
 		HashMap<String, String> map=new HashMap<>();
 		map.put("ErrorMessage", exception.getMessage());

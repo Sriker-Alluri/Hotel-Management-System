@@ -28,8 +28,7 @@ public class UserService {
 	@Autowired
 	 private RoomStatusController status;
 	
-	/*@Autowired
-	AuthenticationManager authenticationManager;*/
+	
 	public Object saveUser(UserRegistration userRegistration) {
 		
 		return userRepository.save(userRegistration);
@@ -38,19 +37,7 @@ public class UserService {
 	public List<UserRegistration> findAll() {
 		return userRepository.findAll();
 	}
-	/*public LoginRequest login(LoginRequest loginRequest) throws Exception {
-		
-		try {
-			UsernamePasswordAuthenticationToken authenticationProvider= new UsernamePasswordAuthenticationToken(loginRequest.getUserName(), loginRequest.getPassword());
-			authenticationManager.authenticate(authenticationProvider);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-//		throw new Exception("Invalid Username or password");
-		}
-		
-		
-		return loginRequest;*/
+	
 	
 public UserRegistration addReg(UserRegistration registration) {
 
@@ -80,11 +67,7 @@ public UserRegistration addReg(UserRegistration registration) {
 		 
 			
 		
-//public UserRegistration gettoatlCost() {
-//	List<UserRegistration> user= new ArrayList<UserRegistration>();
-//	user.getList<Rooms>.get price*status.get days
-//	
-//}
+
 
 	}
 
